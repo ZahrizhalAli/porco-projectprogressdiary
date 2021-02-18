@@ -1,12 +1,12 @@
 GOLD STARS :
 //kalo dapat golden stars full, saya harus beli bakso.
-⭐⭐⭐⭐
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 
 SILVER STARS :
-//kalo dapat > 3 silver STARS full, saya berhak beli roti bakar
+//kalo dapat > 3 silver STARS full saya harus mengulang
 
 BRONZE STARS :
-//kalo dapat
+//kalo dapat 1 bronze stars, saya harus beli kursus baru.
 
 
 template :
