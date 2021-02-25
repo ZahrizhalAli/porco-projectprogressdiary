@@ -83,3 +83,10 @@ body {
 .container {
   margin-top: 100px;
 }
+
+/* post */
+.post-container {
+  margin-top: 100px;
+  padding: 40px;
+  text-align: left;
+}

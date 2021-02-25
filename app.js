@@ -57,7 +57,7 @@ app.get('/posts/:postId/', function(req, res) {
         console.log("ID FOUND!");
         _.lowerCase(found.title)
           res.render('post', {
-            postsDirect: found.title,
+            postsDirect: found.day,
             postscontentDirect: found.content
           });
 
@@ -99,7 +99,7 @@ app.post('/compose', function(req, res) {
   }
   const post1 = new Item({
     title: req.body.textTitle,
-    day: req.body.postDay,    
+    day: req.body.postDay,
     content: req.body.postText
   });
   post1.save();
