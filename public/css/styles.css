@@ -68,7 +68,7 @@ body {
 .footer-basic .social > a:hover {
   opacity:0.9;
   color: #1abc9c !important;
-  
+
 }
 
 .footer-basic .copyright {
@@ -77,4 +77,9 @@ body {
   font-size:13px;
   color:#aaa;
   margin-bottom:0;
+}
+
+/* compose */
+.container {
+  margin-top: 100px;
 }

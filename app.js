@@ -30,6 +30,7 @@ app.use(express.static("public"));
 
 const contentDB = new mongoose.Schema({
   title: String,
+  day:String,
   content: String
 })
 
@@ -93,10 +94,12 @@ app.get('/compose', function(req, res) {
 app.post('/compose', function(req, res) {
   let post = {
     title: req.body.textTitle,
+    day: req.body.postDay,
     content: req.body.postText
   }
   const post1 = new Item({
     title: req.body.textTitle,
+    day: req.body.postDay,    
     content: req.body.postText
   });
   post1.save();
