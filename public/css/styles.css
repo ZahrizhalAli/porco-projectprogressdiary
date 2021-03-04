@@ -126,7 +126,7 @@ d-block{
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   margin-top: 100px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 40px 10%;
   text-align: justify;
 
@@ -136,6 +136,8 @@ d-block{
   font-size:1rem;
   margin-top:0;
   text-align:left;
+  position: relative;
+  bottom:30px;
 }
 .main-post-container{
   position:relative;
@@ -148,4 +150,5 @@ d-block{
 .post-header {
   font-size:3rem;
   text-align: left;
+
 }
