@@ -6,6 +6,15 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require('mongoose');
 const diary = [];
+const getDate = function() {
+  var day = new Date();
+  var options = {
+    weekday: 'long',
+    day: "numeric",
+    month: 'long'
+  };
+  return day.toLocaleDateString("en-US", options);
+};
 
 
 
@@ -26,26 +35,44 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 app.use(express.static("public"));
 
 const contentDB = new mongoose.Schema({
-  title: String,
+  title: {
+    type: String,
+    required: true
+  },
   day:String,
-  content: String
+  content: {
+      type: String,
+      required: true
+  }
 })
 
 const Item = mongoose.model("posts", contentDB);
 app.get('/', function(req, res) {
 
+  res.render('home');
+  // Item.find({}, function(err, posts) {
+  //   res.render('home', {
+  //     homePharagraph: homeStartingContent,
+  //     posts: posts
+  //   });
+  //
+  // })
+
+
+})
+
+app.get('/collections', function(req,res){
   Item.find({}, function(err, posts) {
-    res.render('home', {
+    res.render('collections', {
       homePharagraph: homeStartingContent,
       posts: posts
     });
 
   })
-
-
 })
 app.get('/posts/:postId/', function(req, res) {
   const requestedId = req.params.postId;
@@ -57,22 +84,12 @@ app.get('/posts/:postId/', function(req, res) {
         console.log("ID FOUND!");
         _.lowerCase(found.title)
           res.render('post', {
-            postsDirect: found.day,
+            postsDirect: found.title,
             postscontentDirect: found.content
           });
-
-
-
       }
-
     }
-
-
-
-
   })
-
-
 });
 
 app.get('/about', function(req, res) {
@@ -94,14 +111,15 @@ app.get('/compose', function(req, res) {
 app.post('/compose', function(req, res) {
   let post = {
     title: req.body.textTitle,
-    day: req.body.postDay,
-    content: req.body.postText
+    day: getDate(),
+    content: req.body.content
   }
   const post1 = new Item({
     title: req.body.textTitle,
-    day: req.body.postDay,
-    content: req.body.postText
+    day: getDate(),
+    content: req.body.content
   });
+
   post1.save();
   diary.push(post);
 

@@ -1,18 +1,16 @@
 <%- include("partials/header") -%>
 
-<div class="post-container">
+<div class="post-container compose-container">
 
 <h1>Compose</h1>
 <form class="" action="/compose" method="post">
   <div class="form-group">
 
   <label for="text">Title</label>
-  <input class="form-control" type="text" name="textTitle" value="">
-  <label for="text">Time</label>
-  <input class="form-control" type="text" name="postDay" value="">
+  <input class="form-control" type="text" name="textTitle" value="" required>
   <label for="postText">Post</label>
-  <textarea class="form-control" name="postText" rows="5" cols="30"></textarea>
-  <button class="btn btn-outline-dark btn-form" type="submit" name="button">Publish</button>
+  <textarea id="summernote" name="content" class="form-control" rows="5" cols="30" required></textarea>
+  <button class="btn btn-form" style="background-color: #f37121;color: white;" type="submit" name="button">Publish</button>
 </div>
 
 </form>
