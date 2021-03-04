@@ -27,6 +27,26 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<div class="container py-5 main-post-container">
+
+
+  <div class="row py-5">
+    <div class="col-lg-12 mx-auto">
+
+      
+      <% posts.forEach(function(element){ %>
+      <div class="card shadow mb-4">
+        <div class="card-body p-5">
+          <h1 class="mb-4 post-header"><%= element.title%></h1>
+          <p class="posted-on">Posted on - <%=element.day%></p>
+          <!-- Unordered list -->
+          <p><%=element.content%></p>
+
+        </div>
+      </div>
+      <% }) %>
+      </div>
+      </div>
 
 
 

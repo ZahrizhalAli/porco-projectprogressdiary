@@ -53,14 +53,13 @@ const contentDB = new mongoose.Schema({
 const Item = mongoose.model("posts", contentDB);
 app.get('/', function(req, res) {
 
-  res.render('home');
-  // Item.find({}, function(err, posts) {
-  //   res.render('home', {
-  //     homePharagraph: homeStartingContent,
-  //     posts: posts
-  //   });
-  //
-  // })
+  // res.render('home');
+  Item.find({}, function(err, posts) {
+    res.render('home', {
+      posts: posts
+    });
+
+  })
 
 
 })
@@ -68,7 +67,6 @@ app.get('/', function(req, res) {
 app.get('/collections', function(req,res){
   Item.find({}, function(err, posts) {
     res.render('collections', {
-      homePharagraph: homeStartingContent,
       posts: posts
     });
 
